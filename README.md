@@ -1,6 +1,6 @@
 # Image Classification using TensorFlow in the MapR Data Science Refinery
 
-In this demo we will take a transfer-learned model and use it to correctly label different types of flowers via image classification. 
+In this demo we will take a transfer-learned model and retrain it to correctly label 5 types of flowers it hasn't encountered via image classification. Then we will test this with an image outside of our training set to make sure that this works.
 
 Model is taken from the Google Codelab tutorial [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) and has been retrained using [Inception-V3](https://www.tensorflow.org/tutorials/image_recognition) on flower photos in the data set located [here](http://download.tensorflow.org/example_images/flower_photos.tgz). Retraining on an M4XLarge instance takes ~45 minutes. In order to make reproducing this demo quick, we've also provided the retrained [model]() and [labels]() to you in the repo.
 
