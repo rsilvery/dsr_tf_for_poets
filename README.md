@@ -70,7 +70,7 @@ This Image Classification with Tensorflow notebook does the following:
 * Processes this image using the retrained model and provides guesses as to what label to apply
 * Display flower image
 
-To import this, download this [notebook]() and then import into Zeppelin.
+To import this, download this [notebook](/flowers/Image%20Classification%20with%20Tensorflow.json) and then import into Zeppelin.
 
 
 
