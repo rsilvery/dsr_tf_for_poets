@@ -6,7 +6,7 @@ Model is taken from the Google Codelab tutorial [TensorFlow for Poets](https://c
 
 * Note: you have to do some conversion on these photos or install tooling to handle JPEGs. I've uploaded 10 sample PNG flowers to the [flowers directory](/flowers/)
 
-## Getting Started
+## Steps
 
 ### Load Files
 
@@ -31,6 +31,10 @@ sudo -u root pip install tensorflow
 ```
 
 More detail can be found [here](https://community.mapr.com/community/products/mapr-converged-platform/data-refinery/blog/2017/12/04/how-to-using-tensorflow-with-the-mapr-data-science-refinery)
+
+### Import Notebook
+
+
 
 
 
