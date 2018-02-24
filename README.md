@@ -7,15 +7,28 @@ Model is taken from the Google Codelab tutorial [TensorFlow for Poets](https://c
 
 ## Steps
 
-### Load Files (if you plan to do the training yourself)
+### Load Files 
 
-Place the training image set and script in your MapR global namespace (assuming /user/mapr). This can be found [here](http://download.tensorflow.org/example_images/flower_photos.tgz).
+If you plan to do the training yourself, load the files you will need:
+
+#### Place the training image set and script in your MapR global namespace (assuming /user/mapr). This can be found [here](http://download.tensorflow.org/example_images/flower_photos.tgz).
 
 ```
 wget -P /mapr/my.cluster.com/user/mapr/ https://github.com/googlecodelabs/tensorflow-for-poets-2/blob/master/scripts/retrain.py
 wget http://download.tensorflow.org/example_images/flower_photos.tgz .
 tar -xvzf flower_photos.tgz -C /mapr/my.cluster.com/user/mapr/flowers/
 ```
+
+#### If not, load the provided model and labels file to your global namespace (/user/mapr/flowers/:
+
+* [Model](https://github.com/rsilvery/dsr_tf_for_poets/blob/master/flowers/output_graph.pb)
+* [Labels](https://github.com/rsilvery/dsr_tf_for_poets/blob/master/flowers/output_labels.txt)
+
+
+#### Load a test image
+
+In order to test if your model is performing correctly, you will need an image of a daisy, dandelion, roses, sunflower, or tulip. I've provided an example file [here](flowers/mapr_flower.png) that you can load into your namespace (/user/mapr/flowers).
+
 
 ### Start DSR
 
@@ -33,7 +46,6 @@ sudo -u root pip install tensorflow
 More detail can be found [here](https://community.mapr.com/community/products/mapr-converged-platform/data-refinery/blog/2017/12/04/how-to-using-tensorflow-with-the-mapr-data-science-refinery)
 
 
-### Move the model and labels to your global namespace at /mapr/my.cluster.com/user/mapr/flowers/
 
 #### If you want to train the model yourself on these photos (or whatever photos), you can use these commands:
 
@@ -45,21 +57,22 @@ INFO:tensorflow:Final test accuracy = 90.5% (N=378)
 mv /tmp/output_* /mapr/my.cluster.com/user/mapr/flowers/
 ```
 
-This will train the model and drop the trained model into your container /tmp/ directory along with the labels file.
+Initially, this will train the model and drop the trained model into your container /tmp/ directory along with the labels file. These need to be moved to the global namespace.
 
-
-#### If you just want to get started with the model, you can copy the prepared model and labels to your filespace:
-```
-wget -P /mapr/my.cluster.com/user/mapr/flowers/ 
-```
 
 Note: if you want to use Tensorboard to follow the training, you have to pass in the port it's going to run on into the Docker Run command as a port mapping (ex. -p 6006:6006)
 
 ### Import Notebook to view and test model
 
-This notebook <name> does the following:
+This Image Classification with Tensorflow notebook does the following:
 
-* Test that TensorFlow is installed and working
+* Loads an image from your namespace that is a PNG and saved as /user/mapr/flowers/mapr_flower.png
+* Processes this image using the retrained model and provides guesses as to what label to apply
+* Display flower image
+
+To import this, download this [notebook]() and then import into Zeppelin.
+
+
 
 
 
