@@ -14,7 +14,7 @@ If you plan to do the training yourself, load the files you will need:
 #### Place the training image set and script in your MapR global namespace (assuming /user/mapr). This can be found [here](http://download.tensorflow.org/example_images/flower_photos.tgz).
 
 ```
-wget -P /mapr/my.cluster.com/user/mapr/ https://github.com/googlecodelabs/tensorflow-for-poets-2/blob/master/scripts/retrain.py
+wget -P /mapr/my.cluster.com/user/mapr/ https://raw.githubusercontent.com/googlecodelabs/tensorflow-for-poets-2/master/scripts/retrain.py
 wget http://download.tensorflow.org/example_images/flower_photos.tgz .
 tar -xvzf flower_photos.tgz -C /mapr/my.cluster.com/user/mapr/flowers/
 ```
@@ -50,11 +50,10 @@ More detail can be found [here](https://community.mapr.com/community/products/ma
 #### If you want to train the model yourself on these photos (or whatever photos), you can use these commands:
 
 ```
-python /mapr/my.cluster.com/user/mapr/retrain.py --image_dir /mapr/my.cluster.com/user/mapr/flowers/flower_photos
+python /mapr/my.cluster.com/user/mapr/retrain.py --image_dir /mapr/my.cluster.com/user/mapr/flowers/flower_photos --output_graph /mapr/my.cluster.com/user/mapr/flowers/ --output_labels /mapr/my.cluster.com/user/mapr/flowers/
 [...]
 INFO:tensorflow:Final test accuracy = 90.5% (N=378)
 
-mv /tmp/output_* /mapr/my.cluster.com/user/mapr/flowers/
 ```
 
 Initially, this will train the model and drop the trained model into your container /tmp/ directory along with the labels file. These need to be moved to the global namespace.
@@ -73,6 +72,7 @@ This Image Classification with Tensorflow notebook does the following:
 To import this, download this [notebook](/flowers/Image_Classification_with_Tensorflow.json) and then import into Zeppelin.
 
 
+And this was so much fun, I did the same thing using the [Stanford Dogs Dataset](http://vision.stanford.edu/aditya86/ImageNetDogs/) to classify my dog!
 
 
 
