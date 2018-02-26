@@ -56,7 +56,7 @@ INFO:tensorflow:Final test accuracy = 90.5% (N=378)
 
 ```
 
-This will retrain the model on the Flowers dataset and drop the retrained model into your container /user/mapr/flowers/ directory along with the labels file. 
+This will retrain the model on the Flowers dataset and drop the retrained model into your /user/mapr/flowers/ directory along with the labels file. 
 
 
 Note: if you want to use Tensorboard to follow the training, you have to pass in the port it's going to run on into the Docker Run command as a port mapping (ex. -p 6006:6006)
