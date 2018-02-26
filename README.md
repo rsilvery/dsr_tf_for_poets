@@ -19,7 +19,7 @@ wget http://download.tensorflow.org/example_images/flower_photos.tgz .
 tar -xvzf flower_photos.tgz -C /mapr/my.cluster.com/user/mapr/flowers/
 ```
 
-#### If not, load the provided model and labels file to your global namespace (/user/mapr/flowers/:
+#### If not, load the provided model and labels file to your global namespace (/user/mapr/flowers/):
 
 * [Model](https://github.com/rsilvery/dsr_tf_for_poets/blob/master/flowers/output_graph.pb)
 * [Labels](https://github.com/rsilvery/dsr_tf_for_poets/blob/master/flowers/output_labels.txt)
@@ -56,7 +56,7 @@ INFO:tensorflow:Final test accuracy = 90.5% (N=378)
 
 ```
 
-Initially, this will train the model and drop the trained model into your container /tmp/ directory along with the labels file. These need to be moved to the global namespace.
+This will retrain the model on the Flowers dataset and drop the retrained model into your container /user/mapr/flowers/ directory along with the labels file. 
 
 
 Note: if you want to use Tensorboard to follow the training, you have to pass in the port it's going to run on into the Docker Run command as a port mapping (ex. -p 6006:6006)
